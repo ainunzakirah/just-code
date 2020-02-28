@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>userdetailregist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid fixed>
+    <ion-row>
+    
+        <ion-item>
+          <ion-label position="stacked">Full Name <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input placeholder="eg. Safiyyah Binti Ghazali" [(ngModel)]="UserName"></ion-input>
+        </ion-item>
+      
+     
+        <ion-item>
+          <ion-label position="stacked">Address <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input placeholder="eg. No 21, Jalan Mawar 2, Taman Bunga Damai" [(ngModel)]="UserAddress"></ion-input>
+        </ion-item>
+      
+     
+        <ion-item>
+          <ion-label position="stacked">City <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input placeholder="eg. Setapak" [(ngModel)]="UserCity"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Poscode<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input placeholder="eg. 53100" [(ngModel)]="UserPoscode"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">State <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input placeholder="eg. Selangor" [(ngModel)]="UserState"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Phone Number <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input placeholder="eg. 017xxxxxxxx" [(ngModel)]="UserPhoneNo"></ion-input>
+        </ion-item>
+
+      
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <ion-button (click)="CreateRecord()" [disabled]="!UserName || !UserAddress || !UserCity || !UserPoscode || !UserState || !UserPhoneNo " (click)="goHomePage()">
+          <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
+          &nbsp;Create Record
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
