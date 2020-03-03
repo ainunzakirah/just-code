@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { auth } from 'firebase/app';
+import 'firebase/auth';
+import { AngularFireAuth } from "@angular/fire/auth";
 import * as firebase from 'firebase/app';
 
 @Injectable( /*{
@@ -6,7 +9,9 @@ import * as firebase from 'firebase/app';
 }*/)
 export class AuthenticationService {
 
-  constructor() { }
+  constructor(
+    public angularFireAuth: AngularFireAuth
+  ) { }
 
   registerUser(value){
     return new Promise<any>((resolve, reject) => {
@@ -43,4 +48,12 @@ export class AuthenticationService {
   userDetails(){
     return firebase.auth().currentUser;
   }
+
+  //service to reset page
+  resetPassword(email): Promise<void> {
+    return firebase.auth().sendPasswordResetEmail(email);
+  }
+
+
+
 }

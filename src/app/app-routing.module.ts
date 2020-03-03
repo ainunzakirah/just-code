@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'userdetailregist',
     loadChildren: () => import('./userdetailregist/userdetailregist.module').then( m => m.UserdetailregistPageModule)
+  },
+  {
+    path: 'resetpassword',
+    loadChildren: () => import('./resetpassword/resetpassword.module').then( m => m.ResetpasswordPageModule)
   }
 ];
 

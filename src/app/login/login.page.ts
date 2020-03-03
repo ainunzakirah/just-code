@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { NavController } from '@ionic/angular';
@@ -10,14 +11,18 @@ import { AuthenticationService } from '../services/authentication.service';
 })
 export class LoginPage implements OnInit {
 
+  
   validations_form: FormGroup;
   errorMessage: string = '';
+  
 
   constructor(
     private navCtrl: NavController,
     private authService: AuthenticationService,
-    private formBuilder: FormBuilder
-    ) { }
+    private formBuilder: FormBuilder,
+    
+    ) {
+     }
 
   ngOnInit() {
 
@@ -32,6 +37,8 @@ export class LoginPage implements OnInit {
       ])),
     });
   }
+
+  
 
   validation_messages = {
     'email': [
@@ -59,8 +66,11 @@ export class LoginPage implements OnInit {
     this.navCtrl.navigateForward('/register');
   }
 
-
-
+  //send link to email to reset password
+  
+  goToResetPage(){
+    this.navCtrl.navigateForward('/resetpassword');
+  }
 
 
 }

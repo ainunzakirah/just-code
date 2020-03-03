@@ -62,4 +62,8 @@ export class RegisterPage implements OnInit {
     this.navCtrl.navigateForward('/userdetailregist');
   }
 
+  goLoginPage(){
+    this.navCtrl.navigateBack('/login');
+  }
+
 }
